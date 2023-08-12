@@ -1,0 +1,1 @@
+export const topMoviesSelector = (state) => state.topMoviesReducer;

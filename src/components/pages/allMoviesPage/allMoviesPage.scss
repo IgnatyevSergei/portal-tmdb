@@ -1,0 +1,17 @@
+@import '/src/style/variables.scss';
+
+.allMoviesConainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.allMoviesPaginator {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: $paginatorBg;
+  width: 40%;
+  height: 100%;
+}

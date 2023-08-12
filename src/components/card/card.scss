@@ -1,0 +1,49 @@
+@import '/src/style/variables.scss';
+
+.cardContainer {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  column-gap: 15px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.card {
+  height: 222px;
+  width: 150px;
+  padding: 0 5px 5px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: $logo;
+  background: no-repeat;
+  background-size: contain;
+  border: 3px solid $logo;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.raiting {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $logo;
+  text-align: center;
+  padding-top: 3px;
+  color: #3d3d67;
+}
+
+.movieTitle {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $logo;
+}

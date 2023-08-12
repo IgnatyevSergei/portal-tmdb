@@ -1,0 +1,104 @@
+@import '/src/style/variables.scss';
+
+.movieModalWindow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.modalWindowWrap {
+  width: 100%;
+  height: 90%;
+  background-color: $logo;
+  opacity: 0.85;
+  position: fixed;
+  top: 50px;
+}
+
+.btnWrapper {
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+
+  & .movieModalWindow__btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 25px;
+
+    background-color: $logo;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.headModalWindow {
+  padding: 0 30px;
+  font-size: 15px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__title {
+    font-size: 30px;
+    padding-left: 34.5%;
+    font-weight: 900;
+  }
+}
+
+.contentWrapper {
+  font-size: 20px;
+  padding-top: 15px;
+  display: flex;
+  width: 100%;
+}
+
+.poster {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__pict {
+    width: 80%;
+    height: 440px;
+    border-radius: 5px;
+  }
+}
+
+.infoConetnt {
+  width: 40%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cast {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+
+  &__title {
+    font-weight: 600;
+  }
+}

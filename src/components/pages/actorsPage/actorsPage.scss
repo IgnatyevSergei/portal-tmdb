@@ -1,0 +1,56 @@
+@import '/src/style/variables.scss';
+
+.actorPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.actors {
+  border: 3px solid $logo;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.actorsCardContainer {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  column-gap: 15px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.actorsCard {
+  height: 222px;
+  width: 148px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: no-repeat;
+  background-size: contain;
+}
+
+.actorsName {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $logo;
+}
+
+.actorsPagination {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: $paginatorBg;
+  width: 40%;
+  height: 100%;
+}

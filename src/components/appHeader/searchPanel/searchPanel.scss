@@ -1,0 +1,23 @@
+@import '/src/style/variables.scss';
+
+.searchPanel {
+  width: 55%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+
+  &__input {
+    width: 80%;
+    height: inherit;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: $paginatorBg;
+
+    &::placeholder {
+      color: $black;
+      padding-left: 10px;
+    }
+  }
+}

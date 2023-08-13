@@ -5,26 +5,36 @@ import { Pagination } from '@mui/material';
 import { allMoviesSelector } from '../../../selectors/allMoviesSelector';
 import './allMoviesPage.scss';
 import Card from '../../card/card';
-import { getAllMoviesData } from '../../../actions/actionAllMovies';
+import {
+  getAllMoviesData,
+  searchMovie,
+} from '../../../actions/actionAllMovies';
 import SearchPanel from './../../appHeader/searchPanel';
 
 const AllMoviesPage = () => {
-  const { allMovies } = useSelector(allMoviesSelector);
+  const { allMovies, searchMovies } = useSelector(allMoviesSelector);
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllMoviesData(page));
-  }, [page, dispatch]);
+    dispatch(searchMovie(search, page));
+  }, [page, dispatch, search]);
 
   const handelChangePage = (_, num) => {
     setPage(num);
   };
 
+  const handleSearchActor = (e) => {
+    setSearch(e.target.value);
+    dispatch(searchMovie(search));
+  };
+
   return (
     <div className='allMoviesConainer'>
-      <SearchPanel />
-      <Card movie={allMovies} />
+      <SearchPanel onChange={handleSearchActor} />
+      <Card movie={searchMovies.length > 0 ? searchMovies : allMovies} />
       <div className='allMoviesPaginator'>
         <Pagination
           showFirstButton

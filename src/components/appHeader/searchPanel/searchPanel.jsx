@@ -1,17 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import './searchPanel.scss'
+import './searchPanel.scss';
 
-const SearchPanel = () => {
-    return (
-      <div className='searchPanel'>
-        <input
-          className='searchPanel__input'
-          type='search'
-          placeholder='Search'
-        />
-      </div>
-    );
-}
+const SearchPanel = ({ onChange, ref }) => {
+  return (
+    <div className='searchPanel'>
+      <input
+        className='searchPanel__input'
+        type='search'
+        placeholder='Search'
+        onChange={onChange}
+      />
+    </div>
+  );
+};
 
-export default SearchPanel
+export default SearchPanel;

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 import './card.scss';
 import { getCast, getMovieInfoData } from '../../actions/actionMovieInfo';
-import { movieInfoSelector } from '../../selectors/movieInfoSelector';
 import MovieModalWindow from '../movieModalWindow/movieModalWindow';
 
 const Card = ({ movie }) => {
@@ -14,16 +13,12 @@ const Card = ({ movie }) => {
     const id = e.target.id;
     dispatch(getMovieInfoData(id));
     dispatch(getCast(id));
-    setShow(true)
+    setShow(true);
   };
 
   const handleCloseCard = () => {
-    setShow(false)
-  }
-
-  const { movieInfo, cast } = useSelector(movieInfoSelector);
-
-  console.log(movieInfo, cast);
+    setShow(false);
+  };
 
   const content = movie.map(({ id, posterPath, raiting }) => {
     return (

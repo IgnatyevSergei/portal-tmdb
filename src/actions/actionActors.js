@@ -3,6 +3,7 @@ import { options } from '../components/service/service';
 export const SET_ACTORS = 'SET_ACTORS';
 export const SET_ACTOR_INFO = 'SET_ACTOR_INFO';
 export const SET_ACTOR_MOVIE = 'SET_ACTOR_MOVIE';
+export const SET_SEARCH_ACTOR = 'SET_SEARCH_ACTOR';
 
 export const setActorsAC = (actorsData) => ({
   type: SET_ACTORS,
@@ -17,6 +18,11 @@ export const setActorInfoAC = (actorInfoData) => ({
 export const setActorMovieAC = (movieData) => ({
   type: SET_ACTOR_MOVIE,
   payload: movieData,
+});
+
+export const setSearchActorAC = (searchData) => ({
+  type: SET_SEARCH_ACTOR,
+  payload: searchData,
 });
 
 const transformActorsData = (result) => {
@@ -92,7 +98,22 @@ export const getActorMovieData = (id) => (dispatch) => {
     .then((response) => response.json())
     .then((response) => {
       const res = transformActorMovieData(response.cast);
-      console.log(response.cast);
+      dispatch(setActorMovieAC(res));
     })
     .catch((err) => console.error(err));
 };
+
+export const searchActor =  (person, page) => async (dispatch) => {
+  await fetch(
+    `https://api.themoviedb.org/3/search/person?query=${person}&${page}`,
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      const res = transformActorsData(response);
+      dispatch(setSearchActorAC(res))
+    })
+    .catch((err) => console.error(err));
+};
+
+

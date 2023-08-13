@@ -1,7 +1,8 @@
-import { SET_All_MOVIES } from '../actions/actionAllMovies';
+import { SET_All_MOVIES, SET_SEARCH_MOVIES } from '../actions/actionAllMovies';
 
 const initialState = {
   allMovies: [],
+  searchMovies: [],
 };
 
 export const allMoviesReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ export const allMoviesReducer = (state = initialState, action) => {
       return {
         ...state,
         allMovies: action.payload,
+      };
+    case SET_SEARCH_MOVIES:
+      return {
+        ...state,
+        searchMovies: action.payload,
       };
 
     default:
